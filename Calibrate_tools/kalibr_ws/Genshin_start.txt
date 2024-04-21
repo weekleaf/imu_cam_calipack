@@ -1,0 +1,14 @@
+rosrun kalibr kalibr_calibrate_cameras \
+--bag /home/rm/cam_calib.bag  \
+--topics /image_raw_throttle \
+--models pinhole-radtan \
+--target /home/rm/Calibrate_tools/kalibr_ws/src/kalibr/aslam_offline_calibration/kalibr/config/checkerboard.yaml \
+--show-extraction 
+
+
+
+rosrun kalibr kalibr_calibrate_imu_camera \
+--imu /home/rm/imu.yaml \
+--cam /home/rm/cam_calib-camchain.yaml \
+--target /home/rm/Calibrate_tools/kalibr_ws/src/kalibr/aslam_offline_calibration/kalibr/config/checkerboard.yaml \
+--bag /home/rm/cam_imu.bag --show-extraction
